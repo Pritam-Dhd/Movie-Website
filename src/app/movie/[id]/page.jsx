@@ -23,6 +23,7 @@ const page = async ({ params }) => {
           height={300}
           className="rounded-lg"
           style={{ maxWidth: "100%", height: "100%" }}
+          alt={movie.title || "Movie Image"}
         ></Image>
 
         <div className="p-2">
