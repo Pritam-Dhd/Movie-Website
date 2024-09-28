@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 const NavItem = ({ title, param }) => {
   const searchParams = useSearchParams();
   const genre = searchParams.get("genre");
-  
+
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <div>
         <Link
           className={`hover:text-blue-600 font-semibold ${
@@ -21,7 +21,7 @@ const NavItem = ({ title, param }) => {
           {title}
         </Link>
       </div>
-    </>
+    </Suspense>
   );
 };
 
